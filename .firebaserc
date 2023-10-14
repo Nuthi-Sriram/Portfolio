@@ -1,5 +1,16 @@
 {
-  "projects": {
-    "default": "sriram-nuthi"
-  }
+  "projects": {},
+  "targets": {
+    "sriram-nuthi": {
+      "hosting": {
+        "v1": [
+          "v1-sriram-nuthi.web.app"
+        ],
+        "pr": [
+          "sriram-nuthi.web.app"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
