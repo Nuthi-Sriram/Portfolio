@@ -60,9 +60,10 @@ const Contact = () => {
       <h2 className="title">Get In Touch</h2>
 
       <p>
-        Currently I'm looking for Summer Internship opportunities starting May 2024. I'm interested
-        in Full Stack Developer, DevOps Engineer, Cloud Engineer or Software Engineer roles. If you
-        have any relevant job opportunities or just want to say hi, feel free to mail me!
+        Currently I'm looking for Fall'24, Spring'25 internship opportunities and full-time
+        beginning in May 2025. I'm interested in Full Stack Developer, DevOps Engineer, Cloud
+        Engineer or Software Engineer roles. If you have any relevant job opportunities or just want
+        to say hi, feel free to mail me!
       </p>
 
       <a className="email-link" href={`mailto:${email}`}>

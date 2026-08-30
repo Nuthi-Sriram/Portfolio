@@ -1,5 +1,7 @@
 {
-  "projects": {},
+  "projects": {
+    "default": "sriram-nuthi"
+  },
   "targets": {
     "sriram-nuthi": {
       "hosting": {

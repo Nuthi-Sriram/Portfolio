@@ -134,6 +134,7 @@ const About = () => {
     'JavaScript (ES6+)',
     'React',
     'Docker',
+    'AWS',
   ];
 
   return (
@@ -149,9 +150,9 @@ const About = () => {
             </p>
 
             <p>
-              I've excelled at AppViewX by efficiently delivering critical feature requests and bug
-              fixes to the customers. I was a part of the customer facing CERT+ Tiger Team working
-              on Certificate Life Cycle Management and PKI solutions.
+              I've excelled at Veeva & AppViewX by efficiently delivering critical feature requests
+              and bug fixes to the customers. I was a part of the customer facing CERT+ Tiger Team
+              at AppViewX working on Certificate Life Cycle Management and PKI solutions.
             </p>
 
             <p>
@@ -161,9 +162,10 @@ const About = () => {
             </p>
 
             <p>
-              I am currently in search of exciting Summer Internship opportunities beginning in May
-              2024. With a strong technical background and a passion for innovative solutions, I am
-              eager to contribute and learn in a dynamic team environment during this internship.
+              I am currently in search of exciting Fall'24, Spring'25 internship opportunities and
+              full-time beginning in May 2025. With a strong technical background and a passion for
+              innovative solutions, I am eager to contribute and learn in a dynamic team
+              environment.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>

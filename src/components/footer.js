@@ -107,9 +107,10 @@ const Footer = () => {
       <StyledCredit tabindex="-1">
         <p>
           <a href="https://github.com/Nuthi-Sriram/Portfolio">
-            <div>Designed &amp; Built by Brittany Chiang</div>
+            {/* <div>Designed &amp; Built by Brittany Chiang</div> */}
             <br></br>
-            <div>Revised by Sriram Nuthi</div>
+            {/* <div>Revised by Sriram Nuthi</div> */}
+            <div>Sriram Nuthi</div>
             {githubInfo.stars && githubInfo.forks && (
               <div className="github-stats">
                 <span>
