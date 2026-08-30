@@ -1,0 +1,121 @@
+---
+interface Item {
+  company: string;
+  title: string;
+  location: string;
+  start: string;
+  end: string;
+  tech: string[];
+  bullets: string[];
+}
+interface Props {
+  items: Item[];
+}
+const { items } = Astro.props;
+---
+
+<ol class="timeline">
+  {
+    items.map((item) => (
+      <li class="role">
+        <div class="role-head">
+          <h3>
+            {item.title}
+            <span class="at"> · {item.company}</span>
+          </h3>
+          <p class="meta">
+            <span class="range">
+              {item.start} &ndash; {item.end}
+            </span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span class="location">{item.location}</span>
+          </p>
+        </div>
+
+        <ul class="bullets">
+          {item.bullets.map((b) => (
+            <li>{b}</li>
+          ))}
+        </ul>
+
+        <ul class="tech" aria-label={`Technologies used at ${item.company}`}>
+          {item.tech.map((t) => (
+            <li>{t}</li>
+          ))}
+        </ul>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .timeline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .role + .role {
+    margin-block-start: var(--space-4);
+    border-block-start: 1px solid var(--border);
+    padding-block-start: var(--space-4);
+  }
+
+  .role-head {
+    margin-block-end: var(--space-2);
+  }
+
+  h3 {
+    margin: 0 0 var(--space-1);
+    font-size: var(--step-1);
+  }
+
+  .at {
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .meta {
+    margin: 0;
+    max-width: none;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+  }
+
+  .range {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .sep {
+    margin-inline: 0.4em;
+  }
+
+  .bullets {
+    margin: 0;
+    padding-inline-start: 1.1em;
+  }
+
+  .bullets li {
+    margin-block-end: var(--space-1);
+    max-width: var(--measure);
+  }
+
+  .tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tech li {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.15em 0.55em;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+  }
+</style>

@@ -1,0 +1,93 @@
+---
+interface Metric {
+  value: string;
+  label: string;
+  detail: string;
+  context: string;
+}
+interface Props {
+  metrics: Metric[];
+}
+const { metrics } = Astro.props;
+---
+
+<dl class="proof-strip">
+  {
+    metrics.map((m) => (
+      <div class="metric">
+        <dt class="figure">{m.value}</dt>
+        <dd>
+          <p class="label">{m.label}</p>
+          <p class="detail">{m.detail}</p>
+          <p class="context">{m.context}</p>
+        </dd>
+      </div>
+    ))
+  }
+</dl>
+
+<style>
+  .proof-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-3);
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    border-block-start: 1px solid var(--border);
+    padding-block-start: var(--space-3);
+  }
+
+  @media (max-width: 60rem) {
+    .proof-strip {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 34rem) {
+    .proof-strip {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .metric {
+    min-width: 0;
+  }
+
+  dt.figure {
+    margin: 0 0 var(--space-1);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--step-2);
+    line-height: 1.1;
+    text-transform: none;
+    overflow-wrap: break-word;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  .label {
+    margin: 0 0 var(--space-1);
+    max-width: none;
+    font-size: var(--step-0);
+    line-height: 1.35;
+  }
+
+  .detail {
+    margin: 0;
+    max-width: none;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+    line-height: 1.45;
+  }
+
+  .context {
+    margin: var(--space-1) 0 0;
+    max-width: none;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+  }
+</style>
