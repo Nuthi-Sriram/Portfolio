@@ -7,11 +7,11 @@
     "deploy:live": "firebase deploy --only hosting:live",
     "deploy:v1": "firebase deploy --only hosting:v1",
     "deploy:v2": "firebase deploy --only hosting:v2",
-    "lint-staged": "lint-staged",
+    "lint-staged": "lint-staged --config package.json",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{json,md,yml}": [
+    "{*,!(v1|v2)/**/*}.{json,md,yml}": [
       "prettier --write"
     ]
   },

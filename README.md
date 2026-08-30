@@ -9,6 +9,10 @@ deployed separately.
 | v2      | Oct 2023 – Aug 2026 | Gatsby 3           | https://sriram-nuthi-v2.web.app |
 | v1      | Jul 2020 – Oct 2023 | Static HTML/CSS/JS | https://sriram-nuthi-v1.web.app |
 
+> **Note:** `https://sriram-nuthi.web.app` does not serve v3 yet. The `live` target in
+> `firebase.json` still points at `v2/public`, so `npm run deploy:live` publishes the **v2
+> archive**. The target will be repointed at the v3 build when the Astro rebuild ships.
+
 ## Archives are frozen
 
 `v1/` and `v2/` are historical snapshots. Do not refactor them, upgrade
