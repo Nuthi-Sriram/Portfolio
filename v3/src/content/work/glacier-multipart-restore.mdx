@@ -10,8 +10,8 @@ metrics:
 tech: ["Java", "Spring Boot", "AWS S3", "AWS Glacier", "SQL"]
 ---
 
-Documents archived to Glacier Deep Archive were supposed to be restorable on request. In practice, restores above a certain size simply failed. The restore path used S3's single-object copy operation, which is capped at 5 GiB. Real customer archives ran 100–450 GB, well past that cap. Every one of those restores was doomed before it started, and the failures showed up downstream in a weekly storage-validation job that had been crashing.
+Documents archived to Glacier Deep Archive could not be restored past a certain size: the restore path used S3's single-object copy operation, which is capped at 5 GiB, while real customer archives ran 100–450 GB. A weekly storage-validation job had also been crashing.
 
 The fix was a multipart transfer pipeline replacing the single-object copy, sized to handle files up to 500 GB. Alongside it, I hardened the weekly storage-validation job so it stopped crashing.
 
-This work extended a system I'd built the previous year, during my 2024 internship: a full-stack automated restoration system for Glacier Deep Archive that replaced what had been a manual CLI process. That system had a React front end, Java REST endpoints, a message queue, and a stateful SQL database, managing multi-day migration workflows. The 5 GiB fix was built on top of that existing pipeline rather than as a one-off patch.
+This work extended a system from my 2024 internship: a full-stack automated restoration system for Glacier Deep Archive that replaced what had been a manual CLI process. That system had a React front end, Java REST endpoints, a message queue, and a stateful SQL database, managing multi-day migration workflows.

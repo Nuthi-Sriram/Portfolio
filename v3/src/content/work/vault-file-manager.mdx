@@ -10,9 +10,9 @@ metrics:
 tech: ["C#", ".NET", "Windows", "Application security"]
 ---
 
-Vault File Manager is a native Windows C#/.NET client, and I was the sole engineer on it. There's no one else to route a production issue to and no team to spread ownership across — every bug report, every performance regression, and every security finding on that codebase lands on the same desk, and it's mine.
+Vault File Manager is a native Windows C#/.NET client, and I was the sole engineer on it. There was no one else to route an issue to and no team to share ownership with — whatever came up on that codebase was mine to resolve.
 
-One of the P2 production issues I resolved was upload resiliency at scale — sessions of 39,000 or more files. Fixing it meant making the upload path hold up at that scale, not just in the common case.
+One of the P2 production issues I resolved was upload resiliency at scale — sessions of 39,000 or more files. Fixing it meant making the upload path resilient at that scale.
 
 Separately, I remediated a phantom DLL-hijacking vulnerability across more than 30 libraries in the codebase.
 
