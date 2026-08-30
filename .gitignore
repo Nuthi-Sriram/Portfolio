@@ -1,11 +1,15 @@
-# Project dependencies
-.cache
+# Dependencies
 node_modules
+.cache
 yarn-error.log
-package-lock.json
 
-# Build directory
-/public
+# OS
 .DS_Store
-
 .vscode/
+
+# Firebase deploy cache
+.firebase/
+
+# NOTE: v1/ and v2/ are frozen archives. Their build output is committed
+# deliberately so they can always be redeployed without rebuilding their
+# aging toolchains. Do not add v1/ or v2/ build paths here.
