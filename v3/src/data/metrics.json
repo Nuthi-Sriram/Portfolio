@@ -1,0 +1,26 @@
+[
+  {
+    "value": "79%",
+    "label": "fewer batch DB connection calls",
+    "detail": "133 → 28 per batch, by profiling hot paths and eliminating a 1:1 query-to-connection ratio",
+    "context": "Veeva Systems"
+  },
+  {
+    "value": "80,000+",
+    "label": "message backlog drained",
+    "detail": "4+ hour CrossLinks syncs eliminated by fixing Tomcat silently dropping non-ASCII HTTP headers",
+    "context": "Veeva Systems"
+  },
+  {
+    "value": "100–450 GB",
+    "label": "Glacier restores unblocked",
+    "detail": "Replaced S3 single-object copy, capped at 5 GiB, with a multipart pipeline supporting files up to 500 GB",
+    "context": "Veeva Systems"
+  },
+  {
+    "value": "39,000+",
+    "label": "file upload resiliency",
+    "detail": "Sole engineer on Vault File Manager, a native C#/.NET Windows client; remediated DLL hijacking across 30+ libraries",
+    "context": "Veeva Systems"
+  }
+]
