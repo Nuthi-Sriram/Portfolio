@@ -5,11 +5,14 @@
   "targets": {
     "sriram-nuthi": {
       "hosting": {
-        "v1": [
-          "v1-sriram-nuthi.web.app"
+        "live": [
+          "sriram-nuthi"
         ],
-        "pr": [
-          "sriram-nuthi.web.app"
+        "v1": [
+          "sriram-nuthi-v1"
+        ],
+        "v2": [
+          "sriram-nuthi-v2"
         ]
       }
     }
