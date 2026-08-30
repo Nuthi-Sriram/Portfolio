@@ -1,6 +1,31 @@
 {
-  "hosting": {
-    "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-  }
+  "hosting": [
+    {
+      "target": "live",
+      "public": "v2/public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "v1",
+      "public": "v1",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+        }
+      ]
+    },
+    {
+      "target": "v2",
+      "public": "v2/public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+        }
+      ]
+    }
+  ]
 }
