@@ -10,6 +10,9 @@ yarn-error.log
 # Firebase deploy cache
 .firebase/
 
+# v3 is a live site rebuilt on every change; its build output is not committed.
+v3/public/
+
 # NOTE: v1/ and v2/ are frozen archives. Their build output is committed
 # deliberately so they can always be redeployed without rebuilding their
 # aging toolchains. Do not add v1/ or v2/ build paths here.
