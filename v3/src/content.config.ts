@@ -23,7 +23,10 @@ const projects = defineCollection({
     tech: z.array(z.string()),
     github: z.string().url().optional(),
     external: z.string().url().optional(),
-    personalProject: z.boolean().default(true),
+    // Defaults to false so the badge must be opted into. Its purpose is to stop the
+    // Raft entry being read as production C++ experience; applying it to everything
+    // both dilutes that signal and mislabels IntelliProc, which is published research.
+    personalProject: z.boolean().default(false),
   }),
 });
 
