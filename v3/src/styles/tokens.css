@@ -1,0 +1,53 @@
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --text: #16150f;
+  --text-muted: #55524a;
+  --border: #e4e0d8;
+  --accent: #b4482a;
+  --accent-soft: #f3e6e1;
+
+  --font-sans:
+    "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.45rem);
+  --step-2: clamp(1.44rem, 1.3rem + 0.7vw, 1.94rem);
+  --step-3: clamp(1.73rem, 1.5rem + 1.15vw, 2.58rem);
+  --step-4: clamp(2.07rem, 1.7rem + 1.85vw, 3.44rem);
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+
+  --measure: 68ch;
+  --radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121110;
+    --surface: #1a1917;
+    --text: #f2efe9;
+    --text-muted: #a7a299;
+    --border: #2e2c28;
+    --accent: #e8825f;
+    --accent-soft: #2a1d18;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #121110;
+  --surface: #1a1917;
+  --text: #f2efe9;
+  --text-muted: #a7a299;
+  --border: #2e2c28;
+  --accent: #e8825f;
+  --accent-soft: #2a1d18;
+}
