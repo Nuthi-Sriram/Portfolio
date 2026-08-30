@@ -11,9 +11,9 @@
       "C#/.NET",
       "AWS (S3, Glacier)",
       "REST APIs",
-      "JMS",
+      "JMS/Message Queues",
       "SQL",
-      "React"
+      "React.js"
     ],
     "bullets": [
       "Delivered the Vault CRM to PromoMats content integration by programmatically packaging custom source files into CrossLinks, so CLM presentations and rich media transfer with full fidelity, eliminating manual file hand-offs.",
