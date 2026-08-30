@@ -1,0 +1,118 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  company: string;
+  summary: string;
+  metrics: Array<{ label: string; value: string }>;
+  tech: string[];
+}
+const { href, title, company, summary, metrics, tech } = Astro.props;
+---
+
+<article class="card">
+  <h3>
+    {/* One real link. The ::after overlay below makes the whole card clickable
+        without nesting interactive elements, which would break keyboard and
+        screen-reader navigation. */}
+    <a href={href}>{title}</a>
+  </h3>
+  <p class="company">{company}</p>
+  <p class="summary">{summary}</p>
+
+  <dl class="metrics">
+    {
+      metrics.map((m) => (
+        <div>
+          <dt>{m.label}</dt>
+          <dd class="figure">{m.value}</dd>
+        </div>
+      ))
+    }
+  </dl>
+
+  <ul class="tech" aria-label={`Technologies: ${title}`}>
+    {tech.map((t) => <li>{t}</li>)}
+  </ul>
+</article>
+
+<style>
+  .card {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    background: var(--surface);
+    transition: border-color 0.15s ease;
+  }
+  .card:hover,
+  .card:focus-within {
+    border-color: var(--accent);
+  }
+
+  h3 {
+    margin: 0 0 var(--space-1);
+    font-size: var(--step-1);
+  }
+  h3 a {
+    text-decoration: none;
+  }
+  h3 a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+  }
+  h3 a:hover,
+  h3 a:focus-visible {
+    text-decoration: underline;
+  }
+
+  .company {
+    margin: 0 0 var(--space-2);
+    max-width: none;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+  }
+
+  .summary {
+    margin: 0 0 var(--space-3);
+    max-width: none;
+  }
+
+  .metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin: 0 0 var(--space-2);
+  }
+  .metrics dt {
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+  .metrics dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--step-0);
+    text-transform: none;
+  }
+
+  .tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tech li {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+  }
+  .tech li + li::before {
+    content: '· ';
+  }
+</style>
