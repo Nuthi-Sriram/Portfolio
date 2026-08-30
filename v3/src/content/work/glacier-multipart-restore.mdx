@@ -1,0 +1,17 @@
+---
+title: "Restoring 450 GB from Glacier"
+company: "Veeva Systems"
+summary: "AWS caps single-object copy at 5 GiB. Customer archives were up to 450 GB. Replacing the copy path with a multipart pipeline unblocked restores and stopped a weekly job from crashing."
+order: 1
+metrics:
+  - { label: "Files unblocked", value: "100–450 GB" }
+  - { label: "Pipeline ceiling", value: "500 GB" }
+  - { label: "Prior hard limit", value: "5 GiB" }
+tech: ["Java", "Spring Boot", "AWS S3", "AWS Glacier", "SQL"]
+---
+
+Documents archived to Glacier Deep Archive were supposed to be restorable on request. In practice, restores above a certain size simply failed. The restore path used S3's single-object copy operation, and single-object copy has a hard ceiling of 5 GiB — a limit of the API itself, not a config value we could raise. Real customer archives ran 100–450 GB. Every one of those restores was doomed before it started, and the failures showed up downstream, in a weekly storage-validation job that would crash partway through rather than report the problem cleanly.
+
+The fix was to stop trying to copy these objects in one call. I rebuilt the restore path as a multipart transfer pipeline: break the object into parts, copy each part within Glacier's constraints, and reassemble on the way out, instead of asking S3 to move the whole file in a single request. I sized the pipeline to handle files up to 500 GB, comfortably past the largest archives we were seeing, so the fix wasn't tuned to just clear today's backlog. Alongside the transfer logic, I hardened the weekly validation job so a bad or oversized restore no longer took the whole run down — it needed to fail one file and keep going, not crash and lose visibility into everything after it.
+
+This work extended a system I'd built the previous year, during my 2024 internship: a full-stack automated restoration system that replaced what had been a manual CLI process for pulling files out of Glacier. That system had a React front end for requesting and tracking restores, Java REST endpoints backing it, a message queue to decouple request intake from the actual restore work, and a stateful SQL database tracking where each file sat in a migration that could span multiple days. Multi-day restore workflows don't tolerate a process that has to be babysat and re-run by hand, which was the whole reason the original manual approach didn't scale. Building the 5 GiB fix on top of that existing pipeline, rather than as a one-off patch, meant the multipart logic inherited the same tracking and retry semantics the rest of the system already relied on.
