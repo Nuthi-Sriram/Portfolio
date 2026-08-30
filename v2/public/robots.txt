@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://sriram-nuthi.web.app/sitemap/sitemap-index.xml
+Host: https://sriram-nuthi.web.app
