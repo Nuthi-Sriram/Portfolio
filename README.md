@@ -18,9 +18,6 @@ still work — they're read-only snapshots, not maintained going forward.
 | v2      | https://sriram-nuthi-v2.web.app | Oct 2023 – Aug 2026 | Gatsby 3           |
 | v1      | https://sriram-nuthi-v1.web.app | Jul 2020 – Oct 2023 | Static HTML/CSS/JS |
 
-> `v3` hasn't replaced the live site yet — `https://sriram-nuthi.web.app` currently still serves
-> the `v2` build under the hood.
-
 ## Running it locally
 
 Each version is self-contained in its own folder.
@@ -43,7 +40,9 @@ npm run deploy:v2
 ```
 
 `v1/` and `v2/` are frozen — their build output is committed as-is so the old sites can always be
-redeployed without resurrecting their original toolchains.
+redeployed without resurrecting their original toolchains. `v3/` rebuilds on every change instead,
+so `npm run deploy:live` needs a fresh `npm run build` inside `v3/` first — pushing to `master`
+does this automatically via GitHub Actions.
 
 ## License
 

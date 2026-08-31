@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "live",
-      "public": "v2/public",
+      "public": "v3/public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
     },
     {
