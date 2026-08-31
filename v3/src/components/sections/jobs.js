@@ -155,12 +155,61 @@ const StyledTabPanel = styled.div`
       color: var(--green);
     }
   }
+`;
 
-  .range {
-    margin-bottom: 25px;
+const StyledRoleTimeline = styled.ol`
+  margin: 12px 0 25px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--lightest-navy);
+    }
+
+    &:not(:last-of-type):after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      bottom: -12px;
+      left: 3px;
+      width: 2px;
+      background-color: var(--lightest-navy);
+    }
+
+    &:first-of-type:before {
+      background-color: var(--green);
+    }
+  }
+
+  .role-title {
+    display: block;
+    color: var(--lightest-slate);
+    font-weight: 500;
+    font-size: var(--fz-md);
+  }
+
+  .role-range {
+    display: block;
+    margin-top: 2px;
     color: var(--light-slate);
     font-family: var(--font-mono);
-    font-size: var(--fz-xs);
+    font-size: var(--fz-xxs);
   }
 `;
 
@@ -174,11 +223,13 @@ const Jobs = () => {
         edges {
           node {
             frontmatter {
-              title
               company
               location
-              range
               url
+              roles {
+                title
+                range
+              }
             }
             html
           }
@@ -273,7 +324,7 @@ const Jobs = () => {
           {jobsData &&
             jobsData.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
+              const { url, company, roles } = frontmatter;
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -285,16 +336,21 @@ const Jobs = () => {
                     aria-hidden={activeTabId !== i}
                     hidden={activeTabId !== i}>
                     <h3>
-                      <span>{title}</span>
                       <span className="company">
-                        &nbsp;@&nbsp;
                         <a href={url} className="inline-link">
                           {company}
                         </a>
                       </span>
                     </h3>
 
-                    <p className="range">{range}</p>
+                    <StyledRoleTimeline>
+                      {roles.map((role, roleIndex) => (
+                        <li key={roleIndex}>
+                          {role.title && <span className="role-title">{role.title}</span>}
+                          <span className="role-range">{role.range}</span>
+                        </li>
+                      ))}
+                    </StyledRoleTimeline>
 
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                   </StyledTabPanel>

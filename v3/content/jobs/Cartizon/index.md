@@ -1,10 +1,11 @@
 ---
 date: '2019-10-01'
-title: 'Full Stack Engineer'
 company: 'Cartizon'
 location: 'Bangalore, India'
-range: 'October 2019 & January 2020'
 url: 'https://www.linkedin.com/company/cartizon/'
+roles:
+  - title: 'Full Stack Engineer'
+    range: 'October 2019 & January 2020'
 ---
 
 - Building a fully fledged progressive webapp, an Ecommerce website for smaller businesses(More precisely wholesale retailers) which don't have online presence purchases will be made in app. And delivery agents will choose the closest merchant and get the product to the customers.

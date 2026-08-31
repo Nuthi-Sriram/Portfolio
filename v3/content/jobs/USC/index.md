@@ -1,10 +1,11 @@
 ---
 date: '2023-11-01'
-title: 'Graduate Research Assistant'
 company: 'USC'
 location: 'Los Angeles, CA'
-range: 'November 2023 - May 2024'
 url: 'https://www.usc.edu/'
+roles:
+  - title: 'Graduate Research Assistant'
+    range: 'November 2023 - May 2024'
 ---
 
 - Built preprocessing pipelines for parsing, structuring, and aggregating passive digital phenotypes from wearable devices.

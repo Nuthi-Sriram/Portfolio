@@ -1,10 +1,11 @@
 ---
 date: '2018-05-1'
-title: 'Learning Intern'
 company: 'InfraStack-Labs'
 location: 'Bangalore, India'
-range: 'May 2018 - July 2018'
 url: 'https://infrastack-labs.com/'
+roles:
+  - title: 'Learning Intern'
+    range: 'May 2018 - July 2018'
 ---
 
 - Learned cloud and web stack technologies and applied them on Omegha cloud platform.

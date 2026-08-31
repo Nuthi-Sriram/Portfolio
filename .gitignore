@@ -16,3 +16,8 @@ v3/public/
 # NOTE: v1/ and v2/ are frozen archives. Their build output is committed
 # deliberately so they can always be redeployed without rebuilding their
 # aging toolchains. Do not add v1/ or v2/ build paths here.
+
+# Claude Code planning notes (specs, plans, session ledgers). Working notes
+# for the assistant, not project documentation — never committed.
+docs/superpowers/
+.superpowers/

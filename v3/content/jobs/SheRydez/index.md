@@ -1,10 +1,11 @@
 ---
 date: '2019-09-01'
-title: 'Student Developer'
 company: 'SheRydez'
 location: 'Bangalore, India'
-range: 'September 2019 - January 2020'
 url: 'https://www.amrita.edu/'
+roles:
+  - title: 'Student Developer'
+    range: 'September 2019 - January 2020'
 ---
 
 - Built a live industry project, a Call Taxi Service app for the university.

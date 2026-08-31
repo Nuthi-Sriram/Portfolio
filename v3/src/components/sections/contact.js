@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { srConfig, email } from '@config';
+import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import EmailButton from '@components/emailButton';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -64,9 +65,7 @@ const Contact = () => {
         free to ping my inbox! &#128229;
       </p>
 
-      <a className="email-link" href={`mailto:${email}`}>
-        Say Hello
-      </a>
+      <EmailButton label="Say Hello" />
     </StyledContactSection>
   );
 };

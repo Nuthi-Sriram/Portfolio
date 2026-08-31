@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import EmailButton from '@components/emailButton';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -78,11 +79,7 @@ const Hero = () => {
       </p>
     </>
   );
-  const five = (
-    <a className="email-link" href="mailto:sriramnuthi@gmail.com" target="_blank" rel="noreferrer">
-      Contact Me!
-    </a>
-  );
+  const five = <EmailButton label="Contact Me!" />;
 
   const items = [one, two, three, four, five];
 

@@ -1,10 +1,13 @@
 ---
 date: '2022-02-07'
-title: 'Software Engineer'
 company: 'AppViewX'
 location: 'Bengaluru, India'
-range: 'February 2022 - July 2023'
 url: 'https://appviewx.com/'
+roles:
+  - title: 'Software Engineer'
+    range: 'August 2022 - July 2023'
+  - title: 'R&D Intern'
+    range: 'February 2022 - August 2022'
 ---
 
 - Prevented a possible network outage for over **100 customers** by upgrading code-signing certificate issuance from obsolete browser-based key generation to a hardware security module, complying with industry standards.

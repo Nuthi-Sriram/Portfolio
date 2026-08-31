@@ -1,35 +1,50 @@
-# Portfolio
+# Sriram Nuthi — Portfolio
 
-Personal portfolio for Sriram Nuthi. Each major version is preserved and
-deployed separately.
+Source for my personal portfolio site: **[sriram-nuthi.web.app](https://sriram-nuthi.web.app)**
 
-| Version | Active              | Stack              | URL                             |
-| ------- | ------------------- | ------------------ | ------------------------------- |
-| v3      | Aug 2026 – present  | Astro              | https://sriram-nuthi.web.app    |
-| v2      | Oct 2023 – Aug 2026 | Gatsby 3           | https://sriram-nuthi-v2.web.app |
-| v1      | Jul 2020 – Oct 2023 | Static HTML/CSS/JS | https://sriram-nuthi-v1.web.app |
+A single-page site built with [Gatsby](https://www.gatsbyjs.com/) and React, covering my work
+experience, projects, and publications. The visual design is based on
+[Brittany Chiang's v4 portfolio template](https://github.com/bchiang7/v4), customized with my own
+content, layout changes, and features.
 
-> **Note:** `https://sriram-nuthi.web.app` does not serve v3 yet. The `live` target in
-> `firebase.json` still points at `v2/public`, so `npm run deploy:live` publishes the **v2
-> archive**. The target will be repointed at the v3 build when the Astro rebuild ships.
+## Versions
 
-## Archives are frozen
+The site has gone through three rebuilds over the years. Each one is kept online so old links
+still work — they're read-only snapshots, not maintained going forward.
 
-`v1/` and `v2/` are historical snapshots. Do not refactor them, upgrade
-their dependencies, or apply linting to them. Their build output is
-committed on purpose so they can be redeployed without rebuilding their
-original toolchains.
+| Version | Live                            | Active              | Built with         |
+| ------- | ------------------------------- | ------------------- | ------------------ |
+| v3      | https://sriram-nuthi.web.app    | Aug 2026 – present  | Gatsby 3           |
+| v2      | https://sriram-nuthi-v2.web.app | Oct 2023 – Aug 2026 | Gatsby 3           |
+| v1      | https://sriram-nuthi-v1.web.app | Jul 2020 – Oct 2023 | Static HTML/CSS/JS |
+
+> `v3` hasn't replaced the live site yet — `https://sriram-nuthi.web.app` currently still serves
+> the `v2` build under the hood.
+
+## Running it locally
+
+Each version is self-contained in its own folder.
+
+```bash
+cd v3
+npm install
+npm run develop   # http://localhost:8000
+```
 
 ## Deploying
 
-Always deploy a single target. A bare `firebase deploy` would publish all
-three sites at once.
+The three versions are separate Firebase Hosting sites under one Firebase project, each with its
+own deploy target so a bare `firebase deploy` can't accidentally publish all of them at once.
 
 ```bash
-npm run deploy:live
+npm run deploy:live   # the current site, sriram-nuthi.web.app
 npm run deploy:v1
 npm run deploy:v2
 ```
 
-Deploy targets live in `.firebaserc` and map to site IDs, not domains.
-Configure them with `firebase target:apply`, never by hand.
+`v1/` and `v2/` are frozen — their build output is committed as-is so the old sites can always be
+redeployed without resurrecting their original toolchains.
+
+## License
+
+MIT, per [`v3/LICENSE`](./v3/LICENSE).

@@ -1,10 +1,15 @@
 ---
-date: '2024-05-20'
-title: 'Associate Software Engineer'
+date: '2025-06-01'
 company: 'Veeva Systems'
 location: 'San Francisco Bay Area, USA'
-range: 'May 2024 - Present'
 url: 'https://www.veeva.com/'
+roles:
+  - title: 'Associate Software Engineer'
+    range: 'June 2025 - Present'
+  - title: 'Software Engineer Intern'
+    range: 'January 2025 - May 2025'
+  - title: 'Software Engineer Intern'
+    range: 'May 2024 - August 2024'
 ---
 
 - Delivered the **Vault CRM ↔ PromoMats** content integration by programmatically packaging custom source files into CrossLinks, so CLM presentations and rich media transfer with full fidelity — eliminating manual file hand-offs.
