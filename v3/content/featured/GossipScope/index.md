@@ -2,8 +2,8 @@
 date: '1'
 title: 'Gossip Scope'
 cover: ''
-github: 'https://github.com/sasagarw/gossip-scope'
-external: ''
+github: 'https://github.com/Nuthi-Sriram/gossip-scope'
+external: 'https://gossip-scope.web.app/'
 cta: ''
 tech:
   - React.js
