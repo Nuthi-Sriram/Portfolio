@@ -1,7 +1,7 @@
 ---
 date: '2021-04-01'
 title: 'Human Pose Estimation'
-github: 'https://github.com/Nuthi-Sriram/WebDevSpring2016/tree/master/public/project'
+github: ''
 external: ''
 tech:
   - Keras

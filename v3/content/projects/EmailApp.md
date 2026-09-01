@@ -7,9 +7,9 @@ tech:
   - NodeJS
   - Firebase Storage
   - Firebase firestore
-company: 'Upstatement'
+company: 'Amrita'
 showInProjects: true
 ---
 
-- Webapp features : Login Management, Profile Management, Address-book Management, Managing emails.
-- Project developed in an agile development workflow.
+- A web mail client covering login, profile management, an address book, and sending and reading email.
+- Built in an agile development workflow.

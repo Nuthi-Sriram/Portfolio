@@ -166,7 +166,7 @@ const About = () => {
 
             <p>
               Outside of work I&rsquo;m drawn to distributed systems &mdash; I&rsquo;ve implemented
-              the Raft consensus algorithm in C++ and built a visualiser for gossip-protocol
+              the Raft consensus algorithm in C++ and built a visualizer for gossip-protocol
               propagation.
             </p>
 

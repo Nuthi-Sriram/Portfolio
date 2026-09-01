@@ -6,8 +6,8 @@ external: 'https://aisusc.org/'
 ios: ''
 android: ''
 tech:
-company: 'Amrita'
+company: 'USC'
 showInProjects: true
 ---
 
-- Currently refactoring the entire website.
+Worked on the website for the Artificial Intelligence Society at USC, a student club running AI workshops, speaker events, and project teams.

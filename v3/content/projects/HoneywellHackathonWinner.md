@@ -10,5 +10,5 @@ company: 'Amrita'
 showInProjects: true
 ---
 
--Secured 1st position among 180 teams for developing a POC on smart traffic system, winning $500 in cash.
--My team demos from 0:00 to 12:31.
+- Secured 1st position among 180 teams for developing a POC on smart traffic system, winning $500 in cash.
+- My team demos from 0:00 to 12:31.

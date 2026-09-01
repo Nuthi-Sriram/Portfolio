@@ -14,5 +14,8 @@ company: 'AppViewX'
 showInProjects: true
 ---
 
-Implemented a CNN for estimating the human pose as a part of the neural networks & deep
-learning course
+AppViewX CERT+, an enterprise certificate lifecycle management platform. Worked across the
+issuance, discovery, and renewal paths: moving code-signing certificate issuance onto a hardware
+security module, extending certificate discovery through the keystore module, carrying remaining
+validity across key-pair rotation on renewal, and bulk-migrating DigiCert certificate types to a
+new nomenclature.
