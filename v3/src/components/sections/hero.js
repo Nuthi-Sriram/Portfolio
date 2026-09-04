@@ -75,7 +75,7 @@ const Hero = () => {
         <a href="https://www.usc.edu/" target="_blank" rel="noreferrer">
           University of Southern California
         </a>
-        , where my research on wearable-sensor data contributed to two peer-reviewed publications.
+        , where my research on wearable-sensor data contributed to three peer-reviewed publications.
       </p>
     </>
   );

@@ -160,7 +160,7 @@ const About = () => {
             <p>
               I completed my MS in Computer Science at the University of Southern California, where I
               worked as a Graduate Research Assistant on an NIH-granted project applying machine
-              learning to wearable-sensor data. That work contributed to two peer-reviewed
+              learning to wearable-sensor data. That work contributed to three peer-reviewed
               publications.
             </p>
 

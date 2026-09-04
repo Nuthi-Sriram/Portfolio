@@ -88,6 +88,15 @@ const StyledPublication = styled.li`
 const publications = [
   {
     title:
+      'Detecting short-term post-traumatic stress disorder symptom increases among veterans: machine-learning analysis integrating wearable sensor and daily self-report data',
+    venue: 'BJPsych Open, 12(5), e223',
+    year: '2026',
+    url: 'https://doi.org/10.1192/bjo.2026.12055',
+    authors:
+      'Leightley, D., Prindle, J., Saba, S., Dilkina, B., Pedersen, E. R., Dworkin, E., Howe, E., Thota, P., Nuthi, S., Sedano, A., & Davis, J. P.',
+  },
+  {
+    title:
       'Precision prediction of posttraumatic stress disorder symptom surges: A pilot study integrating real-time daily data with supervised learning',
     venue: 'Journal of Traumatic Stress',
     year: '2025',
