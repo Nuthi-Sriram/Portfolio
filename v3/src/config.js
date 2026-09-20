@@ -24,6 +24,11 @@ module.exports = {
     // },
   ],
 
+  // Profiles linked from the Person schema in src/components/head.js so search
+  // engines can tell these accounts describe the same person. Add Google Scholar
+  // and ORCID URLs here once those profiles exist.
+  additionalProfiles: ['https://www.semanticscholar.org/author/Sriram-Nuthi/2382953157'],
+
   navLinks: [
     {
       name: 'About',

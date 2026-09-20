@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Icon } from '@components/icons';
 import { email } from '@config';
+import { useIsHydrated } from '@hooks';
 
 const StyledWrapper = styled.div`
   position: relative;
@@ -59,6 +60,8 @@ const StyledTooltip = styled.div`
 const EmailButton = ({ label }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
+  // The address is filled in only after hydration — see useIsHydrated.
+  const isHydrated = useIsHydrated();
   const wrapperRef = useRef(null);
 
   useEffect(() => {
@@ -93,7 +96,7 @@ const EmailButton = ({ label }) => {
     <StyledWrapper ref={wrapperRef}>
       <a
         className="email-link"
-        href={`mailto:${email}`}
+        href={isHydrated ? `mailto:${email}` : undefined}
         target="_blank"
         rel="noopener noreferrer"
         onClick={handleToggle}>
@@ -101,8 +104,12 @@ const EmailButton = ({ label }) => {
       </a>
       <StyledTooltip $isOpen={isOpen}>
         <Icon name="Globe" />
-        <span>{email}</span>
-        <button type="button" className="copy-btn" onClick={handleCopy} aria-label="Copy email address">
+        <span>{isHydrated ? email : ''}</span>
+        <button
+          type="button"
+          className="copy-btn"
+          onClick={handleCopy}
+          aria-label="Copy email address">
           <Icon name={isCopied ? 'Check' : 'Copy'} />
         </button>
       </StyledTooltip>

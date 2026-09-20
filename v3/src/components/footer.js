@@ -77,16 +77,24 @@ const Footer = () => {
     if (process.env.NODE_ENV !== 'production') {
       return;
     }
-    fetch('https://github.com/Nuthi-Sriram/Portfolio')
-      .then(response => response.json())
+    // The repo's own github.com page sends no CORS headers, so fetching it
+    // always threw. The REST API does (Access-Control-Allow-Origin: *).
+    fetch('https://api.github.com/repos/Nuthi-Sriram/Portfolio')
+      .then(response => (response.ok ? response.json() : null))
       .then(json => {
+        if (!json) {
+          return;
+        }
         const { stargazers_count, forks_count } = json;
         setGitHubInfo({
           stars: stargazers_count,
           forks: forks_count,
         });
       })
-      .catch(e => console.error(e));
+      .catch(() => {
+        // Star/fork counts are decorative — if the API is unreachable or
+        // rate-limited, leave them out rather than logging to the console.
+      });
   }, []);
 
   return (

@@ -2,7 +2,7 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Sriram Nuthi',
+    title: 'Sriram Nuthi — Software Engineer',
     description:
       'Sriram Nuthi is a software engineer at Veeva Systems working on backend storage, messaging, and document integration at enterprise scale.',
     siteUrl: 'https://sriram-nuthi.web.app', // No trailing slash allowed!
@@ -142,11 +142,18 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
+    // GA4. Set GATSBY_GA_MEASUREMENT_ID (a G-XXXXXXXXXX id) to enable it; the
+    // plugin is left out entirely when the variable is unset so no analytics
+    // script is loaded. The old UA-45666519-2 property stopped collecting when
+    // Google shut Universal Analytics down in 2023.
+    process.env.GATSBY_GA_MEASUREMENT_ID && {
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-45666519-2',
+        trackingIds: [process.env.GATSBY_GA_MEASUREMENT_ID],
+        pluginConfig: {
+          respectDNT: true,
+        },
       },
     },
-  ],
+  ].filter(Boolean),
 };

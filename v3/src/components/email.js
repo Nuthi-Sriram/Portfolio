@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { email } from '@config';
 import { Side } from '@components';
+import { useIsHydrated } from '@hooks';
 
 const StyledLinkWrapper = styled.div`
   display: flex;
@@ -35,13 +36,18 @@ const StyledLinkWrapper = styled.div`
   }
 `;
 
-const Email = ({ isHome }) => (
-  <Side isHome={isHome} orientation="right">
-    <StyledLinkWrapper>
-      <a href={`mailto:${email}`}>{email}</a>
-    </StyledLinkWrapper>
-  </Side>
-);
+const Email = ({ isHome }) => {
+  // The address is filled in only after hydration — see useIsHydrated.
+  const isHydrated = useIsHydrated();
+
+  return (
+    <Side isHome={isHome} orientation="right">
+      <StyledLinkWrapper>
+        <a href={isHydrated ? `mailto:${email}` : undefined}>{isHydrated ? email : 'Email me'}</a>
+      </StyledLinkWrapper>
+    </Side>
+  );
+};
 
 Email.propTypes = {
   isHome: PropTypes.bool,

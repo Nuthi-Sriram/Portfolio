@@ -148,7 +148,12 @@ const ArchivePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Helmet title="Archive" />
+      <Helmet title="Archive">
+        <meta
+          name="description"
+          content="A complete archive of the projects Sriram Nuthi has built — side projects, coursework, and open-source work, with the tech used for each."
+        />
+      </Helmet>
 
       <main>
         <header ref={revealTitle}>
