@@ -16,7 +16,7 @@
     ]
   },
   "devDependencies": {
-    "firebase-tools": "^15.28.2",
+    "firebase-tools": "^15.33.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "prettier": "^3.4.2"
